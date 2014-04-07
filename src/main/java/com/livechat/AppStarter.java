@@ -10,14 +10,14 @@ import org.springframework.context.annotation.Configuration;
 
 @Nonnull
 public class AppStarter {
-	private static final Logger LOGGER = LoggerFactory
+	private static final Logger log = LoggerFactory
 			.getLogger(AppStarter.class);
 
 	public static void main(String[] args) {
-		LOGGER.info("Starting up...");
+		log.info("Starting up...");
 		try (AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext(
 				Config.class)) {
-			LOGGER.info(context.getBean(App.class).getMessage());
+			log.info(context.getBean(App.class).getMessage());
 		}
 	}
 

@@ -20,7 +20,7 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 @ContextConfiguration
 @Nonnull
 public class AppTest {
-	private static final Logger LOGGER = LoggerFactory.getLogger(AppTest.class);
+	private static final Logger log = LoggerFactory.getLogger(AppTest.class);
 
 	@Autowired
 	private App app;
@@ -32,7 +32,7 @@ public class AppTest {
 
 	@Test
 	public void testApp() {
-		LOGGER.debug(app.getMessage());
+		log.debug(app.getMessage());
 		Assert.assertEquals("Hello World!", app.getMessage());
 	}
 
