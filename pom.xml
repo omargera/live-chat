@@ -7,23 +7,13 @@
 		<version>4</version>
 	</parent>
 	<groupId>com.livechat</groupId>
-	<artifactId>livechat</artifactId>
+	<artifactId>livechat_reactor</artifactId>
 	<version>1.0-SNAPSHOT</version>
+	<packaging>pom</packaging>
 	
-	<build>
-      <plugins>
-          <plugin>
-              <groupId>org.apache.maven.plugins</groupId>
-              <artifactId>maven-jar-plugin</artifactId>
-              <version>2.3.1</version>
-              <configuration>
-                  <archive>
-                      <manifest>
-                          <mainClass>com.livechat.AppStarter</mainClass>
-                      </manifest>
-                  </archive>
-              </configuration>
-          </plugin>
-      </plugins>
-  </build>
+	
+	<modules>
+        <module>agent_api_client</module>
+        <module>agent_console</module>
+	</modules>
 </project>
