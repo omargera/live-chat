@@ -1,5 +1,5 @@
 Manifest-Version: 1.0
-Bnd-LastModified: 1396934080010
+Bnd-LastModified: 1396936315603
 Build-Jdk: 1.7.0_51
 Built-By: omarg
 Bundle-Description: Libs for spring context and testing support
@@ -17,4 +17,5 @@ Import-Package: com.google.common.base;version="[16.0,17)",javax.annotat
  ion,javax.swing,org.slf4j;version="[1.7,2)",org.springframework.context
  .annotation
 Main-Class: com.livechat.Login
+Originally-Created-By: Apache Maven Bundle Plugin
 Tool: Bnd-1.50.0

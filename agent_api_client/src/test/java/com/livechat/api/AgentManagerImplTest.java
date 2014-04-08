@@ -1,4 +1,4 @@
-package com.livechat;
+package com.livechat.api;
 
 import static com.google.common.base.Preconditions.checkNotNull;
 
@@ -16,32 +16,22 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
-@RunWith(SpringJUnit4ClassRunner.class)
-@ContextConfiguration
 @Nonnull
-public class AppTest {
-	private static final Logger log = LoggerFactory.getLogger(AppTest.class);
+public class AgentManagerImplTest {
+	private static final Logger log = LoggerFactory.getLogger(AgentManagerImplTest.class);
 
-	@Autowired
-	private App app;
+	private AgentManager agentManager;
 
 	@Before
 	public void setUp() {
-		checkNotNull(app, "Expected not null app");
+		agentManager = new AgentManagerImpl();
+		
+		checkNotNull(agentManager, "Expected not null app");
 	}
 
 	@Test
-	public void testApp() {
-		log.debug(app.getMessage());
-		Assert.assertEquals("Hello World!", app.getMessage());
-	}
-
-	@Configuration
-	@Nonnull
-	static class Config {
-		@Bean
-		public App app() {
-			return new App("Hello World!");
-		}
+	public void testAgentManager() {
+		log.debug(agentManager.test());
+		Assert.assertEquals("Test function works", agentManager.test());
 	}
 }
