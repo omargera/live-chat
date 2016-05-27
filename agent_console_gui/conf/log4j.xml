@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE log4j:configuration SYSTEM "http://logging.apache.org/log4j/log4j.dtd">
+<log4j:configuration xmlns:log4j="http://jakarta.apache.org/log4j/">
+
+	<appender name="ConsoleAppender" class="org.apache.log4j.ConsoleAppender">
+		<param name="Target" value="System.out" />
+		<layout class="org.apache.log4j.PatternLayout">
+			<param name="ConversionPattern" value="%d{ISO8601} %-5p [%t] [%c] %m%n" />
+		</layout>
+	</appender>
+
+	<!-- Buffer events and log them asynchronously -->
+	<appender name="CommonAsyncAppender" class="org.apache.log4j.AsyncAppender">
+		<!--<appender-ref ref="ConsoleAppender"/> -->
+		<appender-ref ref="ConsoleAppender" />
+	</appender>
+
+	<root>
+		<priority value="info" />
+		<appender-ref ref="CommonAsyncAppender" />
+	</root>
+
+
+</log4j:configuration>
